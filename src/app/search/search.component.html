@@ -1,11 +1,12 @@
 <div class="search-container">
     <div class="bg-gradient">
-        <div class="s-input">
-            <input class="input-transparent" type="text" placeholder="Enter dish name ">
+        <div class="s-input" [formGroup]="searchForm">
+            <input class="input-transparent" type="text" formControlName="search" placeholder="Enter meal name ">
             <div class="actions">
-                <button mat-stroked-button>Search Recipe</button>
+                <!-- <button mat-stroked-button>Search Recipe</button> -->
                 <button mat-stroked-button>Advance search</button>
             </div>
         </div>
+        <div class="error" *ngIf="searchError"> No result found</div>
           </div>
 </div>

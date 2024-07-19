@@ -2,9 +2,27 @@
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </ng-template>
 
-<h1 class="title">Categories</h1>
-<div class="recipes" *ngIf="allCategories$ | async as items  else loading">  
-  @for (item of items.categories; track item.idCategory) {
-   <app-recipe [item]="item" class="recipes__item"></app-recipe>
-  }
-</div>
+
+
+<!-- // Default categories section -->
+<div *ngIf="meals.length==0">
+  <h1 class="title">Categories</h1>
+  <div class="recipes" *ngIf="allCategories$ | async as items  else loading">  
+    @for (item of items.categories; track item.idCategory) {
+     <app-recipe [item]="item" class="recipes__item"></app-recipe>
+    }
+  </div>
+</div >
+
+
+
+<!-- search Results display section -->
+
+<div *ngIf="meals.length">
+  <h1 class="title">Search Results for : <strong><em>{{searchText}}</em></strong></h1>
+  <div class="recipes" >  
+    @for (meal of meals; track meal.idCategory) {
+     <app-recipe [item]="meal" class="recipes__item"></app-recipe>
+    }
+  </div>
+</div >
