@@ -4,6 +4,7 @@ export interface categories {
   export interface Category {
     idCategory: string;
     strCategory: string;
+    strMeal?:string;
     strCategoryThumb: string;
     strCategoryDescription: string;
   }

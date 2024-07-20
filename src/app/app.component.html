@@ -1,11 +1,9 @@
 <mat-drawer-container class="container">
     <mat-drawer mode="side" opened>
-        <img src="../assets/logo.jpg" alt="logo">
+        <app-sidebar></app-sidebar>
     </mat-drawer>
     <mat-drawer-content>
         <app-header></app-header>
-        <app-search></app-search>
-        <app-recipes></app-recipes>
         <router-outlet />
     </mat-drawer-content>
 </mat-drawer-container>

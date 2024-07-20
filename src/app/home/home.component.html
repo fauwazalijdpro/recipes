@@ -1,0 +1,31 @@
+<h2 class="head-title">Random meal of the day</h2>
+
+<div class="loading" *ngIf="loadingRandomMeal">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="random" *ngIf="!loadingRandomMeal">
+    <div class="random__description">
+        <h3 class="random__description--title"> 
+            <label>Name</label> 
+           <div class="desc">
+             {{meals[0].strMeal}}
+           </div>
+        </h3>
+        <h3 class="random__description--title"> 
+            <label>Category</label> 
+            <div class="desc">
+                {{meals[0].strCategory}}
+            </div>
+        </h3>
+        <div class="random__description--text">
+             <label>Description</label> 
+             <div class="desc">
+                {{meals[0].strCategoryDescription}}
+             </div>
+        </div>
+
+    </div>
+    <div class="random__description">
+        <img src="{{meals[0].strCategoryThumb}}" alt="Mean Image" srcset="{{meals[0].strCategoryThumb}}">
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<img src="../assets/logo.jpg" alt="logo">
+
+<div id="nav-bar">
+    <div id="nav-content">
+      <div class="nav-button" (click)="redirectTo('/home')">
+        <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="filter_list"></mat-icon>        
+        <span>Home</span></div>
+
+        <div class="nav-button" (click)="redirectTo('/search')">
+          <mat-icon aria-hidden="false" aria-label="filter icon" fontIcon="filter_list"></mat-icon>        
+          <span>Search</span></div>
+
+      <div class="nav-button" (click)="redirectTo('/categories')">
+        <mat-icon aria-hidden="false" aria-label="category icon" fontIcon="category"></mat-icon>        
+        <span>Categories</span></div>
+      <div class="nav-button" (click)="redirectTo('/listing')">  
+        <mat-icon aria-hidden="false" aria-label="sort_by_alpha icon" fontIcon="sort_by_alpha"></mat-icon>
+        <span>Listings</span></div>
+    </div>
+  </div>

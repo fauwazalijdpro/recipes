@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Category } from '../models/recipes.model';
-import { TruncatePipe } from '../pipes/truncate.pipe';
+import { Category } from '../../models/recipes.model';
+import { TruncatePipe } from '../../pipes/truncate.pipe';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({

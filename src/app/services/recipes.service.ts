@@ -21,9 +21,12 @@ export class RecipesService {
   getCategories(): Observable<categories> {
     return this.http.get<categories>(this.API_URL+'categories.php')
   }
+
+  getRandomMeal(): Observable<meals> {
+    return this.http.get<meals>(this.API_URL+'random.php')
+  }
   
   findRecipe(searchText: string): Observable<meals> {
-    return this.http.get<meals>(this.API_URL+'search.php?s='+searchText)
-    
+    return this.http.get<meals>(this.API_URL+'search.php?s='+searchText)    
   }
 }
