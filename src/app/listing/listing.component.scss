@@ -1,0 +1,39 @@
+@import '../../assets/common';
+
+.alphabet {
+    list-style-type: none;
+    margin:90px auto 0;
+    padding:0;
+    cursor: pointer;
+    width:80%;
+    text-align:center;
+
+    .selected {
+        background-color: #18283b;
+        color: #fff;
+        border: 0;
+    }
+}
+
+.alphabet li {
+    margin:0;
+    padding:0;
+    border-right:1px solid darkgrey;
+    font-size: 13px;
+    -moz-box-sizing:border-box;
+    color:black;
+    display:inline-block;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    width:3.84%;
+}
+
+.alphabet li:last-child {
+    border-right: none;
+}
+
+.alphabet li:hover {
+    color:green;
+    background-color: lightgrey;
+}

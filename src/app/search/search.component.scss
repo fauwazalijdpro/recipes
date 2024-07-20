@@ -1,11 +1,17 @@
 @import './../../assets/_colors.scss';
+@import './../../assets/_common.scss';
 
 .search-container {
     .bg-gradient{
         padding: 40px;
         background-image: linear-gradient(-135deg, #044b4a 0%, $secondary-color 100%);
         .s-input {
-            display: flex;
+            display: inline-flex;
+            margin-left: 30px;
+            align-items: baseline;
+            border: 1px solid #1b4648;
+            padding: 5px;
+            border-radius: 5px;
             .actions {
                 display: flex;
                 align-items: center;
@@ -18,6 +24,11 @@
                     margin-right: 10px;
                 }
             }
+            .mat-mdc-form-field-hint {
+                color: #fff;
+            }
+             
+
         }
         .error {
             display: inline-block;
@@ -63,4 +74,12 @@
     
     
     
+}
+
+.search-result{
+    h1.title {
+        font-size: 1rem;
+        padding-left: 30px;
+        padding-top: 20px;
+    }
 }

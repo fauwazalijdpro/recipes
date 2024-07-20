@@ -4,6 +4,13 @@
 
 @import '../../assets/colors';
 
+.mat-icon-back {
+  margin-right: 10px;
+    cursor: pointer;
+    display: block;
+    width: 95%;
+    padding-left: 14px;
+}
 #nav-toggle:checked ~ #nav-header {
     width: calc(80px) - 16px;
   }

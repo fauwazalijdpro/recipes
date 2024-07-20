@@ -3,7 +3,7 @@ export interface categories {
   }
   export interface Category {
     idCategory: string;
-    strCategory: string;
+    strCategory: string | null;
     strMeal?:string;
     strCategoryThumb: string;
     strCategoryDescription: string;
@@ -17,6 +17,7 @@ export interface categories {
     strMeal: string;
     strDrinkAlternate?: any;
     strCategory: string;
+    categoryName?:string;
     strArea: string;
     strInstructions: string;
     strMealThumb: string;
@@ -66,4 +67,20 @@ export interface categories {
     strImageSource?: any;
     strCreativeCommonsConfirmed?: any;
     dateModified?: any;
+  }
+
+  export interface MealFormat {
+    idMeal: string;
+    strMeal: string;
+    strCategory: string;
+    strArea: string;
+    strInstructions: string;
+    strMealThumb: string;
+    strTags: string | null;
+    strYoutube: string;
+    strSource: string | null;
+    strImageSource: string | null;
+    strCreativeCommonsConfirmed: string | null;
+    dateModified: string | null;
+    ingredients: { [ingredient: string]: string }[]; // Array of objects containing ingredient and measure
   }

@@ -4,13 +4,13 @@
   
   <div *ngIf="allCategories$ | async as items  else loading">
     <div class="categories">
-      <h1 class="categories__title">Categories</h1>
+      <h1 class="categories__title">{{pageTitle}}</h1>
       <mat-icon aria-hidden="false" aria-label="Example sort icon" fontIcon="sort"
-        (click)="sortByProperty(items.categories,'strCategory')" matTooltip="Sort Alphabetically"></mat-icon>
+        (click)="sortByProperty(items.categories,'strCategory',reverse);reverse = !reverse" matTooltip="Sort Alphabetically"></mat-icon>
     </div>
     <div class="recipes">
       @for (item of items.categories; track item.idCategory) {
-      <app-recipe [item]="item" class="recipes__item"></app-recipe>
+      <app-recipe [item]="item" class="recipes__item" [type]="'category'"></app-recipe>
       }
     </div>
   </div>

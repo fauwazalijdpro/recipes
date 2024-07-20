@@ -8,12 +8,8 @@ import { categories, Meal, meals } from '../models/recipes.model';
   providedIn: 'root'
 })
 export class RecipesService {
-  private filteredMeals = new BehaviorSubject<{meals:meals,searchText:string}>({} as any);
-  currentFilteredMeals = this.filteredMeals.asObservable();
-  
-  updateSearch(meals: meals,searchText:string) {
-    this.filteredMeals.next({meals,searchText});
-  }
+
+
 
   private API_URL= environment.API_URL;
   constructor(private http: HttpClient) { }
@@ -22,11 +18,23 @@ export class RecipesService {
     return this.http.get<categories>(this.API_URL+'categories.php')
   }
 
+  getByLetter(letter: string): Observable<meals> {
+    return this.http.get<meals>(this.API_URL+'search.php?f='+letter)
+  }
+
   getRandomMeal(): Observable<meals> {
     return this.http.get<meals>(this.API_URL+'random.php')
   }
   
   findRecipe(searchText: string): Observable<meals> {
     return this.http.get<meals>(this.API_URL+'search.php?s='+searchText)    
+  }
+
+  getByCateory(letter:string): Observable<meals> {
+    return this.http.get<meals>(this.API_URL+'filter.php?c='+letter)
+  }
+
+  getByRecipeId(id:string): Observable<meals> {
+    return this.http.get<meals>(this.API_URL+'lookup.php?i='+id)
   }
 }

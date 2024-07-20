@@ -1,0 +1,32 @@
+<ng-template #loading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+  
+  <div *ngIf="categories  else loading">
+    <div class="categories">
+      <h1 class="categories__title">Listings</h1>
+
+      <ul class="alphabet">
+          <li *ngFor="let letter of letters" 
+              [ngClass]="{ 'selected': letter === selectedLetter }"
+              (click)="getByAlpha(letter)">
+            {{ letter }}
+          </li>
+        </ul>
+      <mat-icon aria-hidden="false" aria-label="Example sort icon" fontIcon="sort"
+        (click)="sortByProperty(categories,'strCategory',reverse);reverse = !reverse" matTooltip="Sort Alphabetically"></mat-icon>
+    </div>
+    <div class="recipes">
+      <div class="no-results" *ngIf="noResult">
+        Sorry! No results found for {{selectedLetter}}
+      </div>
+      @for (item of categories; track item.idCategory) {
+      <app-recipe [item]="item" class="recipes__item"  [type]="'meal'"></app-recipe>
+      }
+    </div>
+  </div>
+
+  
+  <div *ngIf="showLoader">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>

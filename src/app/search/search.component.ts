@@ -1,17 +1,24 @@
 import { CommonModule } from '@angular/common';
-import { meals } from './../models/recipes.model';
-import { RecipesService } from './../services/recipes.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import { debounce, debounceTime, distinctUntilChanged, filter, of, pipe, shareReplay, switchMap, tap } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
+import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs';
+import { RecipesService } from './../services/recipes.service';
+import {MatInputModule} from '@angular/material/input';
+import { Category } from '../models/recipes.model';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { RecipeComponent } from '../recipes/recipe/recipe.component';
+
 @Component({
   selector: 'app-search',
   standalone: true,
   imports: [MatButtonModule,
     FormsModule,
     CommonModule,
-    ReactiveFormsModule
+    MatInputModule,
+    RecipeComponent,
+    ReactiveFormsModule,
+    MatProgressBarModule
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
@@ -27,7 +34,7 @@ export class SearchComponent implements OnInit{
   searchText$ = this.searchForm.controls.search.valueChanges.pipe(
     debounceTime(300),
     distinctUntilChanged(),
-    tap( item => {
+    tap( _item => {
       this.searchError = false;
     })
   );
@@ -38,18 +45,33 @@ export class SearchComponent implements OnInit{
     })
   )
   searchError: boolean = false;
+  meals: Category[] = []
+  searchText: string = '';
 
   ngOnInit(): void {
 
     this.recipes$.subscribe( result => {
-      debugger
       if(!result.meals){ 
         this.searchError = true;
+        this.meals = [];
         return;
       }
       if(result.meals.length){
-         this.recipesService.updateSearch(result,this.searchForm.controls.search.value);
+         this.searchText = this.searchForm.controls.search.value
+         if(('meals' in result)) {
+           this.meals = result.meals.map( item => {
+             return {
+               idCategory: item['idMeal'],
+               strCategory: item['strCategory'],
+               strCategoryThumb: item['strMealThumb'],
+               strCategoryDescription: item['strInstructions'],
+             }
+           })
+         }
       }
+    }, _errro => {
+      this.searchError = true;
+      this.meals = [];
     })
   }
 

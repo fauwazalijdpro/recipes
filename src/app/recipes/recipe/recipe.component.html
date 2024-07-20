@@ -1,10 +1,16 @@
     <div class="scard">
-        <h4 class="scard__heading">{{item.strCategory}}</h4>
+        <h4 class="scard__heading" *ngIf="(!!item.strMeal && item.strMeal.length > 0)">
+          <strong>Meal Name: </strong>
+          {{item.strMeal}}
+        </h4>
+        <h4 class="scard__heading">
+          <strong>Category Name: </strong>
+          {{item.strCategory}}</h4>
         <div class="scard__img">
           <img src="{{item.strCategoryThumb}}" alt="" srcset="">
         </div>
         <p class="scard__description">
           {{item.strCategoryDescription  | truncate: 200 }}
         </p>
-        <div class="scard__cta" mat-button>  <button mat-stroked-button>Learn more</button></div>
+        <div class="scard__cta" mat-button> <div class="action" (click)="goto(item)">{{type === 'category' ? 'View Category': 'View meal details'}}</div></div>
     </div>

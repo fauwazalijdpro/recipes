@@ -2,6 +2,10 @@
 
 <div id="nav-bar">
     <div id="nav-content">
+
+      <mat-icon aria-hidden="false" aria-label="arrow_back icon" fontIcon="arrow_back"
+        (click)="goBack()" matTooltip="Back" class="mat-icon-back" matTooltip="Go back"></mat-icon>
+
       <div class="nav-button" (click)="redirectTo('/home')">
         <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="filter_list"></mat-icon>        
         <span>Home</span></div>

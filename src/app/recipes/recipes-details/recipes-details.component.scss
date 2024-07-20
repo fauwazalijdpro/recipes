@@ -1,0 +1,29 @@
+ /* Basic CSS for table styling */
+@import '../../../assets/common';
+
+ .meal-table {
+    width: calc(50vw);
+    margin: 0 auto;
+    
+ table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  td:first-child {
+    width: 120px; /* Adjust width for the first column if needed */
+    font-weight: bold;
+  }
+  .meal-image {
+    max-width: 100%;
+    height: auto;
+  }
+}

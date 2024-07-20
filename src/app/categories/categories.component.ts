@@ -6,31 +6,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { RecipeComponent } from '../recipes/recipe/recipe.component';
 import { CommonModule } from '@angular/common';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
+import { sortByProperty } from './../util/sort'
+import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [MatProgressBarModule,MatIconModule,RecipeComponent,CommonModule],
+  imports: [MatProgressBarModule,MatIconModule,RecipeComponent,MatTooltipModule,CommonModule],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss'
 })
 export class CategoriesComponent {
   allCategories$: Observable<categories> = this.recipesService.getCategories();
-  constructor(private recipesService: RecipesService){  }
+  sortByProperty = sortByProperty;
+  constructor(public recipesService: RecipesService){  }
   reverse: boolean = false;
-  sortByProperty(array:any, prop:string) {
-    this.reverse = !this.reverse
-    array.sort((a:any, b:any) => {
-      let nameA = a[prop].toLowerCase();
-      let nameB = b[prop].toLowerCase();
-      
-      if (nameA < nameB) {
-        return this.reverse ? 1 : -1; // this.Reverse order if this.reverse is true
-      }
-      if (nameA > nameB) {
-        return this.reverse ? -1 : 1; // this.Reverse order if this.reverse is true
-      }
-      return 0;
-    });
-  }
+  pageTitle = "Categories";
 }

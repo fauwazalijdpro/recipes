@@ -1,7 +1,17 @@
 <div class="search-container">
     <div class="bg-gradient">
-        <div class="s-input" [formGroup]="searchForm">
-            <input class="input-transparent" type="text" formControlName="search" placeholder="Enter meal name ">
+        <div class="s-input">
+
+            <form class="search-form" [formGroup]="searchForm">
+                <mat-form-field class="search-full-width">
+                  <mat-label>Enter meal name</mat-label>
+                  <input matInput #message maxlength="256"  formControlName="search">
+                  <mat-hint align="start">Eg: Chicken, Spicy</mat-hint>
+                </mat-form-field>
+              </form>
+
+            <!-- <input class="input-transparent" type="text"  placeholder=" "> -->
+            <!-- <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint> -->
             <div class="actions">
                 <!-- <button mat-stroked-button>Search Recipe</button> -->
                 <button mat-stroked-button>Advance search</button>
@@ -9,4 +19,23 @@
         </div>
         <div class="error" *ngIf="searchError"> No result found</div>
           </div>
+</div>
+
+
+<div class="search-result">
+    <ng-template #loading>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </ng-template>
+      
+      
+      <!-- search Results display section -->
+      
+      <div *ngIf="meals.length">
+        <h1 class="title">Search Results for : <strong><em>{{searchText}}</em></strong></h1>
+        <div class="recipes">
+          @for (meal of meals; track meal.idCategory) {
+          <app-recipe [item]="meal" class="recipes__item"  [type]="'meal'"></app-recipe>
+          }
+        </div>
+      </div>
 </div>

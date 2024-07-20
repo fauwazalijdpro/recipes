@@ -1,11 +1,19 @@
+@import '../../../assets/colors';
 .scard {
     display: flex;
     flex-direction: column;
     padding: 18px 30px;
-    
+    justify-content: space-between;
+    height: 90%;
     &__heading {
-      margin-bottom: 1rem;
+      margin-bottom: 5px;
       font-weight: 500;
+      font-size: 12px;
+      strong {
+      font-weight: 500;
+      font-size: 0.75rem;
+      color:$primary-color;
+      }
     }
     &__img img {
       width: 100%;
@@ -13,10 +21,11 @@
     &__description {
       margin-bottom: 2rem;
     }
-    &__cta button{
-    font-size: 1rem;
-    background-color: #206d69;
-    border-color: #206d69;
-    color: #fff;
+    &__cta {
+      display: flex;
+      justify-content: end;
+      align-items: baseline;
+      text-decoration: underline;
+      cursor: pointer;
     }    
   }

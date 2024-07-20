@@ -1,1 +1,65 @@
-<p>recipes-details works!</p>
+<h1 class="head-title">Meal Details</h1>
+
+
+<div *ngIf="showLoader">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+
+  <div class="meal-table" *ngIf="!showLoader">
+    <table >
+        <tr>
+          <th>Property</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>ID</td>
+          <td>{{ mealDetails.idMeal }}</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>{{ mealDetails.strMeal }}</td>
+        </tr>
+        <tr>
+          <td>Category</td>
+          <td>{{ mealDetails.strCategory }}</td>
+        </tr>
+        <tr>
+          <td>Area</td>
+          <td>{{ mealDetails.strArea }}</td>
+        </tr>
+        <tr>
+          <td>Instructions</td>
+          <td>{{ mealDetails.strInstructions }}</td>
+        </tr>
+        <tr>
+          <td>Thumbnail</td>
+          <td><img class="meal-image" src="{{ mealDetails.strMealThumb }}" alt="{{ mealDetails.strMeal }}"></td>
+        </tr>
+        <tr>
+          <td>Tags</td>
+          <td>{{ mealDetails.strTags }}</td>
+        </tr>
+        <tr>
+          <td>YouTube Link</td>
+          <td><a href="{{ mealDetails.strYoutube }}" target="_blank">{{ mealDetails.strYoutube }}</a></td>
+        </tr>
+        <tr>
+          <td>Source</td>
+          <td><a href="{{ mealDetails.strSource }}" target="_blank">{{ mealDetails.strSource }}</a></td>
+        </tr>
+      </table>
+    
+      <h2>Ingredients</h2>
+    
+      <table>
+        <tr>
+          <th>Ingredient</th>
+          <th>Measure</th>
+        </tr>
+
+        <tr *ngFor="let ingredient of getIngredientsArray()">
+            <td>{{ ingredient.key }}</td>
+            <td>{{ ingredient.value }}</td>
+          </tr>
+      </table>
+  </div>

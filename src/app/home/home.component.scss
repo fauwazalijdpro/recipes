@@ -1,15 +1,11 @@
 @import '../../assets/colors';
+@import '../../assets/common';
+
 :host {
   min-height: calc(80vh);
 }
 
-.head-title {
-    margin: 15px 30px;
-    font-size: 1.2rem;
-    color: $primary-body-bg;
-    border-bottom: 2px solid $primary-body-bg;
-    padding-bottom: 5px;
-}
+
 .random {
   display: flex;
   padding: 30px;
