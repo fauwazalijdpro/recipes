@@ -14,7 +14,7 @@ import { TruncatePipe } from '../../../pipes/truncate.pipe';
 })
 export class RecipeComponent {
   @Input() type: string = '';
-
+  @Input() cat: string = 'Category Name';
   @Input() item: Category = {
     idCategory: '',
     strCategory: '',

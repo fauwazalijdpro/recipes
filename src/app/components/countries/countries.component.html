@@ -1,0 +1,21 @@
+<ng-template #loading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+  
+  <div *ngIf="allCountries$ | async as items  else loading">
+    <div class="categories">
+      <h2 class="head-title">Choose meals by countries</h2>
+    </div>
+    <div class="countries">
+      @for (item of items.meals; track item.strArea) {
+        <div class="flag-sec" (click)="getCountriesMeals(item)">
+            <img
+            [src]="getFlag(item.strArea.toLowerCase())"
+            alt="{{item.strArea}}">
+            <strong>                
+                {{item.strArea}}
+            </strong>
+        </div>
+      }
+    </div>
+  </div>

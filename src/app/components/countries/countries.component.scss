@@ -1,0 +1,48 @@
+@import '../../../assets/colors';
+
+.countries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .flag-sec {
+        flex: 0 0 22%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        cursor: pointer;
+        -webkit-transition: all 0.5s ease; /* Safari and Chrome */
+        -moz-transition: all 0.5s ease; /* Firefox */
+        -o-transition: all 0.5s ease; /* IE 9 */
+        -ms-transition: all 0.5s ease; /* Opera */
+        transition: all 0.5s ease;
+        &:hover {
+            -webkit-transform:scale(1.05); /* Safari and Chrome */
+            -moz-transform:scale(1.05); /* Firefox */
+            -ms-transform:scale(1.05); /* IE 9 */
+            -o-transform:scale(1.05); /* Opera */
+             transform:scale(1.05);
+             box-shadow: 0px 0px 26px rgb(197 197 197);
+        }
+        img {
+            width: 150px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
+        @media (max-width: 767px) {
+                flex: 0 0 50%; /* Example value for smaller screens */
+        }
+
+        @media (max-width: 1024px) and (min-width: 768px) {
+            flex: 0 0 33%; /* Example value for smaller screens */
+        }
+    }
+}
+.head-title {
+    margin: 15px 30px;
+    font-size: 1.2rem;
+    color: $primary-body-bg;
+    border-bottom: 2px solid $primary-body-bg;
+    padding-bottom: 5px;
+}

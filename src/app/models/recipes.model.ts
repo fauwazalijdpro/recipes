@@ -84,3 +84,16 @@ export interface categories {
     dateModified: string | null;
     ingredients: { [ingredient: string]: string }[]; // Array of objects containing ingredient and measure
   }
+
+  export interface countries {
+    meals: Meal[]
+  }
+  
+  export interface country {
+    strArea: string
+  }
+
+  interface FlagUrls {
+    [key: string]: string;
+}
+  

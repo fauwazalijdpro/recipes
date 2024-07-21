@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from '../environment/environment';
-import { categories, Meal, meals } from '../models/recipes.model';
+import { categories, countries, meals } from '../models/recipes.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,10 @@ export class RecipesService {
     return this.http.get<meals>(this.API_URL+'search.php?f='+letter)
   }
 
+  getCountries(): Observable<countries> {
+    return this.http.get<countries>(this.API_URL+'list.php?a=list')
+  }
+  
   getRandomMeal(): Observable<meals> {
     return this.http.get<meals>(this.API_URL+'random.php')
   }
@@ -32,6 +36,10 @@ export class RecipesService {
 
   getByCateory(letter:string): Observable<meals> {
     return this.http.get<meals>(this.API_URL+'filter.php?c='+letter)
+  }
+
+  getByCountry(country:string): Observable<meals> {
+    return this.http.get<meals>(this.API_URL+'filter.php?a='+country)
   }
 
   getByRecipeId(id:string): Observable<meals> {

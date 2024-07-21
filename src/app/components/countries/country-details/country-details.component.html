@@ -1,0 +1,16 @@
+<ng-template #loading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+  <h2 class="head-title">Meals in {{countryName}}</h2>
+  <div *ngIf="categories  else loading">
+    <div class="recipes">
+      @for (item of categories; track item.idCategory) {
+      <app-recipe [item]="item" class="recipes__item"  [type]="'meal'" [cat]="'Country Name'"></app-recipe>
+      }
+    </div>
+  </div>
+
+  
+  <div *ngIf="showLoader">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>

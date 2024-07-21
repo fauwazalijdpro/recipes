@@ -10,6 +10,7 @@
     display: block;
     width: 95%;
     padding-left: 14px;
+    margin-bottom: 5px;
 }
 #nav-toggle:checked ~ #nav-header {
     width: calc(80px) - 16px;
