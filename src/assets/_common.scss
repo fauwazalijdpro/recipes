@@ -11,6 +11,9 @@
     padding: 20px;
     border: 1px dotted #efefef;
     border-radius: 7px;
+    @media screen and (max-width:1024px) {
+      justify-content: center;
+    }
   &__item {
     flex: 0 0 23%;
     border-radius: .5rem;

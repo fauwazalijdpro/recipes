@@ -1,5 +1,5 @@
-@import '../../assets/colors';
-@import '../../assets/common';
+@import '../../../assets/colors';
+@import '../../../assets/common';
 
 :host {
   min-height: calc(80vh);
@@ -10,6 +10,13 @@
   display: flex;
   padding: 30px;
   justify-content: space-between;
+
+  @media screen and (max-width:1024px) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
   &__description {
     flex: 0 0 45%;
     label {

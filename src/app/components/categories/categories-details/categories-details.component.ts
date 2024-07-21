@@ -1,10 +1,11 @@
-import { RecipesService } from './../../services/recipes.service';
+
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Category } from '../../models/recipes.model';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';
 import { RecipeComponent } from '../../recipes/recipe/recipe.component';
+import { Category } from '../../../models/recipes.model';
+import { RecipesService } from '../../../services/recipes.service';
 
 @Component({
   selector: 'app-categories-details',

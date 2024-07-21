@@ -1,10 +1,9 @@
-import { categories } from './../../models/recipes.model';
-import { Component, Input } from '@angular/core';
-import { Category } from '../../models/recipes.model';
-import { TruncatePipe } from '../../pipes/truncate.pipe';
-import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
+import { Category } from '../../../models/recipes.model';
+import { TruncatePipe } from '../../../pipes/truncate.pipe';
 
 @Component({
   selector: 'app-recipe',

@@ -2,9 +2,8 @@ import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { ActivatedRoute } from "@angular/router";
-import { meals } from "../../models/recipes.model";
-import { RecipesService } from "../../services/recipes.service";
-
+import { meals } from "../../../models/recipes.model";
+import { RecipesService } from "../../../services/recipes.service";
 @Component({
   selector: "app-recipes-details",
   standalone: true,

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { categories } from '../models/recipes.model';
-import { RecipesService } from '../services/recipes.service';
 import { MatIconModule } from '@angular/material/icon';
 import { RecipeComponent } from '../recipes/recipe/recipe.component';
 import { CommonModule } from '@angular/common';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { sortByProperty } from './../util/sort'
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { categories } from '../../models/recipes.model';
+import { RecipesService } from '../../services/recipes.service';
+import { sortByProperty } from '../../util/sort';
 @Component({
   selector: 'app-categories',
   standalone: true,

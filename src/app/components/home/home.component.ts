@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipesService } from '../services/recipes.service';
-import { Category, meals } from '../models/recipes.model';
 import { CommonModule } from '@angular/common';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { Category } from '../../models/recipes.model';
+import { RecipesService } from '../../services/recipes.service';
 
 @Component({
   selector: 'app-home',

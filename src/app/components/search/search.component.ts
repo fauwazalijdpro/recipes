@@ -3,11 +3,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { debounceTime, distinctUntilChanged, filter, switchMap, tap } from 'rxjs';
-import { RecipesService } from './../services/recipes.service';
 import {MatInputModule} from '@angular/material/input';
-import { Category } from '../models/recipes.model';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RecipeComponent } from '../recipes/recipe/recipe.component';
+import { Category } from '../../models/recipes.model';
+import { RecipesService } from '../../services/recipes.service';
 
 @Component({
   selector: 'app-search',

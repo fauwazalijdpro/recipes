@@ -1,11 +1,10 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { HomeComponent } from './home/home.component';
-import { ListingComponent } from './listing/listing.component';
-import { CategoriesDetailsComponent } from './categories/categories-details/categories-details.component';
-import { RecipesDetailsComponent } from './recipes/recipes-details/recipes-details.component';
+import { CategoriesDetailsComponent } from './components/categories/categories-details/categories-details.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { HomeComponent } from './components/home/home.component';
+import { ListingComponent } from './components/listing/listing.component';
+import { RecipesDetailsComponent } from './components/recipes/recipes-details/recipes-details.component';
+import { SearchComponent } from './components/search/search.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },

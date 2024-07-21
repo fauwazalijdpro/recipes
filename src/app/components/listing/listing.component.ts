@@ -3,12 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RecipeComponent } from '../recipes/recipe/recipe.component';
-import { CategoriesComponent } from '../categories/categories.component';
-import { map, Observable, tap } from 'rxjs';
-import { categories, Category } from '../models/recipes.model';
-import { RecipesService } from '../services/recipes.service';
-import { sortByProperty } from '../util/sort';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { sortByProperty } from '../../util/sort';
+import { Category } from '../../models/recipes.model';
+import { RecipesService } from '../../services/recipes.service';
 
 @Component({
   selector: 'app-listing',

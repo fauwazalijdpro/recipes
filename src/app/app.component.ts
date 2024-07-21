@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import { HeaderComponent } from './header/header.component';
-import { SearchComponent } from './search/search.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { HeaderComponent } from './components/header/header.component';
+import { SearchComponent } from './components/search/search.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
